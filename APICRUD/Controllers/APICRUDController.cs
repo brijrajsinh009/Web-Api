@@ -51,7 +51,6 @@ public class APICRUDController : ControllerBase
         {
             return BadRequest();
         }
-        Console.WriteLine(_tokenService.GenerateJwtToken("Jadeja", "abc@gmail.com", 15));
         return Ok(books);
     }
 
@@ -59,6 +58,7 @@ public class APICRUDController : ControllerBase
     [HttpPost("addBook", Name = "AddBook")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     [CutomAuth]
     public IActionResult AddBook([FromBody] BookViewModel newBook)
     {
@@ -74,6 +74,10 @@ public class APICRUDController : ControllerBase
         int id;
         string message;
         (isAdded, id, message) = _apiCRUDService.AddBook(newBook);
+        if (!isAdded)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
         return Ok(new { Id = id, Message = message });
     }
 
