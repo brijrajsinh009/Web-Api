@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace APICRUD.Data.Models;
+namespace ApiCrud.Data.Models;
 
 public partial class Book
 {

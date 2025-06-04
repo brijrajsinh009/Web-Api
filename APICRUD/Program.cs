@@ -1,14 +1,14 @@
-using APICRUD.Data.Context;
-using APICRUD.Data.IRepo;
-using APICRUD.Data.Repo;
-using APICRUD.Services.IServices;
-using APICRUD.Services.Services;
+using ApiCrud.Data.Context;
+using ApiCrud.Data.IRepo;
+using ApiCrud.Data.Repo;
+using ApiCrud.Services.IServices;
+using ApiCrud.Services.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<APICRUDContext>(options =>
+builder.Services.AddDbContext<ApiCrudContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
@@ -18,7 +18,7 @@ builder.Services.AddControllers();
 
 
 builder.Services.AddScoped<IBooksRepo,BooksRepo>();
-builder.Services.AddScoped<IAPICRUDService,APICRUDService>();
+builder.Services.AddScoped<IApiCrudService,ApiCrudService>();
 builder.Services.AddScoped<ITokenService,TokenService>();
 builder.Services.AddScoped<IUserRepo,UserRepo>();
 

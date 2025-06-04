@@ -1,17 +1,17 @@
-using APICRUD.Data.CustomModels;
-using APICRUD.Data.IRepo;
-using APICRUD.Data.Models;
-using APICRUD.Services.IServices;
+using ApiCrud.Data.CustomModels;
+using ApiCrud.Data.IRepo;
+using ApiCrud.Data.Models;
+using ApiCrud.Services.IServices;
 
-namespace APICRUD.Services.Services;
+namespace ApiCrud.Services.Services;
 
-public class APICRUDService : IAPICRUDService
+public class ApiCrudService : IApiCrudService
 {
     private readonly IBooksRepo _bookRepo;
     private readonly IUserRepo _userRepo;
     private readonly ITokenService _tokenService;
 
-    public APICRUDService(IBooksRepo bookRepo, IUserRepo userRepo,ITokenService tokenService)
+    public ApiCrudService(IBooksRepo bookRepo, IUserRepo userRepo,ITokenService tokenService)
     {
         _bookRepo = bookRepo;
         _userRepo = userRepo;

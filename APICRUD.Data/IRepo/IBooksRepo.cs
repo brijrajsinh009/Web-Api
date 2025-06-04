@@ -1,6 +1,6 @@
-using APICRUD.Data.Models;
+using ApiCrud.Data.Models;
 
-namespace APICRUD.Data.IRepo;
+namespace ApiCrud.Data.IRepo;
 
 public interface IBooksRepo
 {

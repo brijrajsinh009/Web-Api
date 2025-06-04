@@ -1,8 +1,8 @@
-using APICRUD.Data.CustomModels;
+using ApiCrud.Data.CustomModels;
 
-namespace APICRUD.Services.IServices;
+namespace ApiCrud.Services.IServices;
 
-public interface IAPICRUDService
+public interface IApiCrudService
 {
     public IEnumerable<BookViewModel> GetAllBooks();
 

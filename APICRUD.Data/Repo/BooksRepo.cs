@@ -1,14 +1,14 @@
-using APICRUD.Data.Context;
-using APICRUD.Data.IRepo;
-using APICRUD.Data.Models;
+using ApiCrud.Data.Context;
+using ApiCrud.Data.IRepo;
+using ApiCrud.Data.Models;
 
-namespace APICRUD.Data.Repo;
+namespace ApiCrud.Data.Repo;
 
 public class BooksRepo : IBooksRepo
 {
-    private readonly APICRUDContext _context;
+    private readonly ApiCrudContext _context;
 
-    public BooksRepo(APICRUDContext context)
+    public BooksRepo(ApiCrudContext context)
     {
         _context = context;
     }

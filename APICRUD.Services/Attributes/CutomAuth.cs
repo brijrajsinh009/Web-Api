@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
-using APICRUD.Services.IServices;
-using APICRUD.Data.IRepo;
-using APICRUD.Data.Models;
+using ApiCrud.Services.IServices;
+using ApiCrud.Data.IRepo;
+using ApiCrud.Data.Models;
 
-namespace APICRUD.Services.Attributes;
+namespace ApiCrud.Services.Attributes;
 
 public class CutomAuth : Attribute, IAuthorizationFilter
 {

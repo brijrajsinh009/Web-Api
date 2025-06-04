@@ -1,27 +1,27 @@
-using APICRUD.Data.CustomModels;
-using APICRUD.Services.Attributes;
-using APICRUD.Services.IServices;
-using APICRUD.Services.Services;
+using ApiCrud.Data.CustomModels;
+using ApiCrud.Services.Attributes;
+using ApiCrud.Services.IServices;
+using ApiCrud.Services.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace APICRUD.Controllers;
+namespace ApiCrud.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class APICRUDController : ControllerBase
+public class ApiCrudController : ControllerBase
 {
 
-    private readonly IAPICRUDService _apiCRUDService;
+    private readonly IApiCrudService _apiCRUDService;
     private readonly ITokenService _tokenService;
 
-    public APICRUDController(IAPICRUDService apiCRUDService, ITokenService tokenService)
+    public ApiCrudController(IApiCrudService apiCRUDService, ITokenService tokenService)
     {
         _apiCRUDService = apiCRUDService;
         _tokenService = tokenService;
     }
 
 
-    [HttpPost("login", Name = "Login")]
+    [HttpPost("Login", Name = "Login")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult Login([FromBody] LoginDetails model)
@@ -40,7 +40,7 @@ public class APICRUDController : ControllerBase
 
 
 
-    [HttpGet("books", Name = "GetBooks")]
+    [HttpGet("Books", Name = "GetBooks")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [CutomAuth]
@@ -55,7 +55,8 @@ public class APICRUDController : ControllerBase
     }
 
 
-    [HttpPost("addBook", Name = "AddBook")]
+
+    [HttpPost("AddBook", Name = "AddBook")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -82,7 +83,8 @@ public class APICRUDController : ControllerBase
     }
 
 
-    [HttpDelete("deleteBook", Name = "DeleteBook")]
+
+    [HttpDelete("DeleteBook", Name = "DeleteBook")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult DeleteBook(int id)
@@ -102,7 +104,8 @@ public class APICRUDController : ControllerBase
     }
 
 
-    [HttpPost("updateBook", Name = "UpdateBook")]
+
+    [HttpPost("UpdateBook", Name = "UpdateBook")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult UpdateBook([FromBody] BookViewModel book)
@@ -125,8 +128,4 @@ public class APICRUDController : ControllerBase
         }
         return Ok(new { Id = id, Message = message });
     }
-
-
-
-
 }

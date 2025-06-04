@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace APICRUD.Data.CustomModels;
+namespace ApiCrud.Data.CustomModels;
 
 public class BookViewModel
 {

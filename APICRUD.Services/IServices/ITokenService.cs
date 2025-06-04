@@ -1,4 +1,4 @@
-namespace APICRUD.Services.IServices;
+namespace ApiCrud.Services.IServices;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
